@@ -12,12 +12,12 @@ public class Connection2DB {
         Connection Con = null;
         Statement st;
         ResultSet rs;
-        String path = "SchoolDatabase.mdb";
-        String url = "jdbc:ucanaccess://" + path;
+        Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_db", "zaynab", "09031992");
         try{
-            Con = DriverManager.getConnection(url);
+            Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_db", "zaynab", "09031992");
             st =Con.createStatement();
-            String sql = "SELECT * FROM tblLearner";
+            String sql = "SELECT * FROM learners";
             rs  = st.executeQuery(sql);
             while(rs.next()){
                 String sName,sSurname,sDOB,pContact;
@@ -54,7 +54,7 @@ public class Connection2DB {
            
            Connection con = newConnection();
            Statement st = con.createStatement();
-           String qry = "SELECT * FROM tblParent";
+           String qry = "SELECT * FROM parents";
            ResultSet rs = st.executeQuery(qry);
            table.setModel(DbUtils.resultSetToTableModel(rs));
        }catch(Exception ex){
@@ -68,7 +68,7 @@ public class Connection2DB {
            
            Connection con = newConnection();
            Statement st = con.createStatement();
-           String qry = "SELECT * FROM tblTeacher";
+           String qry = "SELECT * FROM teachers";
            ResultSet rs = st.executeQuery(qry);
            table.setModel(DbUtils.resultSetToTableModel(rs));
        }catch(Exception ex){
