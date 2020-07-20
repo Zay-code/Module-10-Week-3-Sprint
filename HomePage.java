@@ -44,7 +44,7 @@ public class HomePage extends javax.swing.JFrame {
         lblHeading.setText("WELCOME TO  THE MZAMOMTHSA REGISTRATION SYSTEM");
 
         btnParentLogin.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
-        btnParentLogin.setText("Parent");
+        btnParentLogin.setText("Parent Access");
         btnParentLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnParentLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
